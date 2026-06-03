@@ -57,3 +57,45 @@ a{color:inherit}.container{width:min(1180px,calc(100% - 42px));margin:auto}.gold
 @media(max-width:430px){
   .brand img{width:49px;height:32px;border-radius:8px}.brand-title{font-size:.82rem;max-width:46vw}.mobile-lang-pill{padding:8px 11px;font-size:.86rem}.hero{padding-top:28px}.visual-card{max-width:315px}.proof-card span{font-size:.66rem}.btnrow .btn{width:100%;justify-content:center}.card{min-width:88%}
 }
+
+/* V8 hotfix: restore original logo assets and prevent mobile clipping */
+.brand img{
+  width:96px;
+  height:46px;
+  object-fit:contain;
+  background:rgba(4,8,14,.72);
+  padding:3px 5px;
+}
+.lang-cover{
+  height:245px;
+  background:linear-gradient(180deg,rgba(6,8,12,.18),rgba(6,8,12,.62)), url('brand-banner.png') center / contain no-repeat;
+  background-color:#080d16;
+}
+.mini-banner{
+  background:#080d16;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.mini-banner img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+@media(max-width:900px){
+  .nav{height:auto;min-height:70px;padding:9px 0;align-items:center}
+  .brand{align-items:center;gap:9px;flex:1;min-width:0}
+  .brand img{width:78px;height:46px;flex:0 0 auto;border-radius:10px;padding:3px}
+  .brand-title{font-size:.86rem;line-height:1.08;white-space:normal;max-width:52vw;overflow:visible;text-overflow:clip;display:block}
+  .brand-sub{display:none}
+  .mobile-lang-pill{flex:0 0 auto;margin-inline-start:8px}
+  .lang-cover{height:155px;background-size:92% auto;background-position:center}
+  .lang-content h1{font-size:clamp(2.05rem,12vw,3.5rem)}
+  .mini-banner{border-radius:22px;padding:8px;background:#080d16}
+}
+@media(max-width:430px){
+  .brand img{width:68px;height:42px}
+  .brand-title{font-size:.8rem;max-width:48vw}
+  .mobile-lang-pill{font-size:.84rem;padding:8px 10px}
+  .lang-cover{height:135px;background-size:94% auto}
+}
