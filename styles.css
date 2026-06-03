@@ -99,3 +99,106 @@ a{color:inherit}.container{width:min(1180px,calc(100% - 42px));margin:auto}.gold
   .mobile-lang-pill{font-size:.84rem;padding:8px 10px}
   .lang-cover{height:135px;background-size:94% auto}
 }
+
+
+/* V9 FINAL: use the supplied original logo/banner exactly, without darkening, recoloring or cropping */
+.topbar{
+  background:rgba(6,9,15,.88);
+}
+.brand{
+  flex:1 1 auto;
+  min-width:0;
+}
+.brand img{
+  width:156px;
+  height:68px;
+  object-fit:contain;
+  object-position:center;
+  background:transparent;
+  padding:0;
+  border:0;
+  border-radius:8px;
+  box-shadow:none;
+}
+.brand-title{color:var(--gold2)}
+.hero-grid{grid-template-columns:.95fr 1.05fr}
+.visual-card.brand-hero-card{
+  max-width:760px;
+  width:100%;
+  padding:10px;
+  background:rgba(5,8,14,.52);
+  border-radius:28px;
+}
+.visual-card.brand-hero-card::before{
+  inset:5px;
+  background:transparent;
+  border:1px solid rgba(216,184,90,.35);
+  box-shadow:none;
+}
+.visual-card.brand-hero-card img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
+  border-radius:20px;
+  animation:subtleFloat 8s ease-in-out infinite;
+  box-shadow:0 24px 55px rgba(0,0,0,.32);
+}
+.visual-card.brand-hero-card .caption{display:none!important}
+.lang-card{background:linear-gradient(135deg,rgba(16,24,39,.95),rgba(7,10,16,.98))}
+.lang-cover{
+  height:auto!important;
+  min-height:0!important;
+  padding:18px 18px 0;
+  background:none!important;
+  background-color:transparent!important;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.lang-cover img{
+  display:block;
+  width:100%;
+  max-width:960px;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
+  border-radius:22px;
+  border:1px solid rgba(216,184,90,.22);
+  box-shadow:0 22px 60px rgba(0,0,0,.36);
+}
+.mini-banner{
+  padding:10px;
+  background:rgba(5,8,14,.62);
+}
+.mini-banner img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
+  border-radius:18px;
+}
+@media(max-width:900px){
+  .nav{min-height:74px;align-items:center}
+  .brand img{width:116px;height:54px;flex:0 0 auto}
+  .brand-title{font-size:.82rem;max-width:46vw;line-height:1.1}
+  .hero-grid,.rtl .hero-grid{grid-template-columns:1fr;gap:26px}
+  .visual-card.brand-hero-card{order:-1;max-width:100%;padding:8px;border-radius:24px;margin-top:6px}
+  .visual-card.brand-hero-card img{border-radius:18px;animation:none}
+  .lang-page{padding:14px;background:#070a10}
+  .lang-card{border-radius:24px;width:100%}
+  .lang-cover{padding:12px 12px 0!important}
+  .lang-cover img{border-radius:18px;max-height:38vh;object-fit:contain}
+  .lang-content{padding:24px 18px 28px}
+  .lang-content h1{font-size:clamp(1.9rem,10vw,3.1rem);line-height:1.02;margin-top:10px}
+}
+@media(max-width:430px){
+  .brand img{width:96px;height:48px}
+  .brand-title{font-size:.76rem;max-width:44vw}
+  .mobile-lang-pill{font-size:.82rem;padding:7px 10px}
+  .hero{padding-top:22px}
+  .visual-card.brand-hero-card{padding:6px;border-radius:20px}
+  .visual-card.brand-hero-card img{border-radius:15px}
+  .lang-cover img{max-height:34vh}
+}
