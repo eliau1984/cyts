@@ -251,3 +251,37 @@ a{color:inherit}.container{width:min(1180px,calc(100% - 42px));margin:auto}.gold
   .portrait-card img{border-radius:16px}
   .profile-portrait{max-width:270px}
 }
+
+
+/* V11: calmer layout — Yaniv portrait appears once only in the hero.
+   The profile section is text-focused with compact option chips instead of a second image. */
+.profile-single{
+  grid-template-columns:1fr!important;
+  max-width:940px;
+}
+.profile-single .about-box{
+  text-align:center;
+  margin-inline:auto;
+}
+.profile-points{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin-top:26px;
+}
+.profile-points span{
+  border:1px solid rgba(216,184,90,.28);
+  background:rgba(216,184,90,.06);
+  color:var(--gold2);
+  border-radius:999px;
+  padding:9px 14px;
+  font-weight:800;
+  font-size:.9rem;
+  box-shadow:0 12px 28px rgba(0,0,0,.16);
+}
+@media(max-width:900px){
+  .profile-single .about-box{padding:24px 18px}
+  .profile-points{gap:8px;margin-top:20px}
+  .profile-points span{font-size:.82rem;padding:8px 11px}
+}
