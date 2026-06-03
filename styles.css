@@ -202,3 +202,52 @@ a{color:inherit}.container{width:min(1180px,calc(100% - 42px));margin:auto}.gold
   .visual-card.brand-hero-card img{border-radius:15px}
   .lang-cover img{max-height:34vh}
 }
+
+
+/* V10: Keep the full original logo only on the language page and as a small header brand.
+   Inner pages return to the calmer square Yaniv portrait with the slow rotating gold frame. */
+.portrait-card{
+  max-width:520px;
+  width:100%;
+  margin-inline:auto;
+  aspect-ratio:1 / 1;
+  padding:14px;
+  border-radius:32px;
+  background:rgba(8,12,20,.68);
+}
+.portrait-card::before{
+  inset:6px;
+  border-radius:27px;
+  background:linear-gradient(145deg,rgba(15,24,39,.94),rgba(6,9,15,.96));
+  border:1px solid rgba(216,184,90,.30);
+  box-shadow:inset 0 0 55px rgba(216,184,90,.055);
+}
+.portrait-card img{
+  width:100%;
+  height:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:23px;
+  display:block;
+}
+.profile-portrait{
+  max-width:430px;
+}
+/* The old banner-specific rules stay inactive because the inner pages no longer use brand-hero-card. */
+@media(max-width:900px){
+  .portrait-card{
+    max-width:340px;
+    padding:10px;
+    border-radius:26px;
+    margin-top:6px;
+  }
+  .portrait-card::before{border-radius:22px}
+  .portrait-card img{border-radius:18px;animation:none}
+  .profile-portrait{max-width:300px;order:2}
+}
+@media(max-width:430px){
+  .portrait-card{max-width:305px;padding:7px;border-radius:22px}
+  .portrait-card img{border-radius:16px}
+  .profile-portrait{max-width:270px}
+}
