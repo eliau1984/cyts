@@ -1,6 +1,6 @@
 <!doctype html><html lang="he" dir='rtl'><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YC Technological Solutions | ייעוץ הנדסי וניהול פרויקטים</title><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="site-v2.css?v=20260727-2"></head><body class='rtl'><header class="topbar"><div class="container nav">
 <a class="brand" href="index.html"><img src="logo-mark-wide.png" alt="YC Technological Solutions"><div><div class="brand-title">YC Technological Solutions</div><div class="brand-sub">הנדסה · טכנולוגיה · חדשנות</div></div></a>
-<nav class="navlinks"><a class="active"  href="cyts-he.html">ראשי</a><a class="" href="cyts-he.html#services">שירותים</a><a class="" href="projects-he.html">פרויקטים</a><a class="" href="representations-he.html">סוכנויות ונציגויות</a><a class="" href="partnerships-he.html">שת"פים</a><a class="" href="cyts-he.html#profile">פרופיל</a><a class="" href="cyts-he.html#contact">יצירת קשר</a><a class="lang-pill" href="cyts-en.html">English</a></nav><a class="mobile-lang-pill" href="cyts-en.html">English</a></div></header>
+<nav class="navlinks"><a class="active"  href="cyts-he.html">ראשי</a><a class="" href="cyts-he.html#services">שירותים</a><a class="" href="projects-he.html">פרויקטים</a><a class="" href="representations-he.html">סוכנויות ונציגויות</a><a class="" href="partnerships-he.html">שת"פים</a><a class="" href="cyts-he.html#profile">פרופיל</a><a class="" href="cyts-he.html#contact">יצירת קשר</a><a class="lang-pill" href="cyts-en.html">English</a></nav></div></header>
 <main>
 <section class="hero"><div class="container hero-grid"><div><div class="kicker">ייעוץ הנדסי גלובלי</div><h1>חזון הנדסי.<span>תוצאה תעשייתית.</span></h1><p>מהנדסת שטח מסורתית ועד לשיא הטכנולוגיה של AI ורובוטיקה. YC Technological Solutions מספקת מעטפת הנדסית מלאה לניהול פרויקטים מקצה לקצה — משלב האפיון והתכנון ועד להטמעת אוטומציה, רובוטיקה ובינה מלאכותית ברצפת הייצור.</p><div class="btnrow"><a class="btn" href="mailto:yaniv@ycts-eng.com">שליחת מייל לייעוץ</a><a class="btn secondary" href="tel:+972544232450">חיוג 054-423-2450</a></div><div class="proof"><div class="proof-card"><strong>22+</strong><span>שנות ניסיון הנדסי בינלאומי</span></div><div class="proof-card"><strong>$80M+</strong><span>ניהול תקציבי CAPEX</span></div><div class="proof-card"><strong>6X</strong><span>הכפלת כושר ייצור</span></div></div></div><div class="visual-card portrait-card"><img src="yaniv-portrait.png" alt="יניב כהן - ייעוץ הנדסי"></div></div></section>
 <div class="techline"></div>
@@ -28,4 +28,33 @@
   nodes.forEach(el=>obs.observe(el));
 })();
 </script>
+
+<script>
+(function () {
+  const navLinks = Array.from(document.querySelectorAll('.navlinks a:not(.lang-pill)'));
+
+  function updateActiveMenu() {
+    const hash = window.location.hash || '';
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    let target;
+    if (hash === '#services') {
+      target = navLinks.find(link => link.getAttribute('href').endsWith('#services'));
+    } else if (hash === '#profile') {
+      target = navLinks.find(link => link.getAttribute('href').endsWith('#profile'));
+    } else if (hash === '#contact') {
+      target = navLinks.find(link => link.getAttribute('href').endsWith('#contact'));
+    } else {
+      target = navLinks.find(link => !link.getAttribute('href').includes('#'));
+    }
+
+    if (target) target.classList.add('active');
+  }
+
+  window.addEventListener('hashchange', updateActiveMenu);
+  document.addEventListener('DOMContentLoaded', updateActiveMenu);
+  updateActiveMenu();
+})();
+</script>
+
 </body></html>

@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YC Technological Solutions | Engineering & Project Management</title><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="site-v2.css?v=20260727-2"></head><body><header class="topbar"><div class="container nav">
 <a class="brand" href="index.html"><img src="logo-mark-wide.png" alt="YC Technological Solutions"><div><div class="brand-title">YC Technological Solutions</div><div class="brand-sub">Engineering · Technology · Innovation</div></div></a>
-<nav class="navlinks"><a class="active"  href="cyts-en.html">Home</a><a class="" href="cyts-en.html#services">Services</a><a class="" href="projects-en.html">Projects</a><a class="" href="representations-en.html">Agencies</a><a class="" href="partnerships-en.html">Partnerships</a><a class="" href="cyts-en.html#profile">Profile</a><a class="" href="cyts-en.html#contact">Contact</a><a class="lang-pill" href="cyts-he.html">עברית</a></nav><a class="mobile-lang-pill" href="cyts-he.html">עברית</a></div></header>
+<nav class="navlinks"><a class="active"  href="cyts-en.html">Home</a><a class="" href="cyts-en.html#services">Services</a><a class="" href="projects-en.html">Projects</a><a class="" href="representations-en.html">Agencies</a><a class="" href="partnerships-en.html">Partnerships</a><a class="" href="cyts-en.html#profile">Profile</a><a class="" href="cyts-en.html#contact">Contact</a><a class="lang-pill" href="cyts-he.html">עברית</a></nav></div></header>
 <main>
 <section class="hero"><div class="container hero-grid"><div><div class="kicker">Global Engineering Consultancy</div><h1>Engineering vision.<span>Industrial results.</span></h1><p>From deep-rooted manufacturing expertise to advanced AI and robotics. YC Technological Solutions delivers full-scale End-to-End engineering project management—from initial characterization and infrastructure planning to automation, robotics and AI deployment on the shop floor.</p><div class="btnrow"><a class="btn" href="mailto:yaniv@ycts-eng.com">Email Consultation</a><a class="btn secondary" href="tel:+972544232450">Call +972 54-423-2450</a></div><div class="proof"><div class="proof-card"><strong>22+</strong><span>Years of global engineering experience</span></div><div class="proof-card"><strong>$80M+</strong><span>CAPEX budgets managed</span></div><div class="proof-card"><strong>6X</strong><span>Capacity increase delivered</span></div></div></div><div class="visual-card portrait-card"><img src="yaniv-portrait.png" alt="Yaniv Cohen engineering profile"></div></div></section>
 <div class="techline"></div>
@@ -28,4 +28,33 @@
   nodes.forEach(el=>obs.observe(el));
 })();
 </script>
+
+<script>
+(function () {
+  const navLinks = Array.from(document.querySelectorAll('.navlinks a:not(.lang-pill)'));
+
+  function updateActiveMenu() {
+    const hash = window.location.hash || '';
+    navLinks.forEach(link => link.classList.remove('active'));
+
+    let target;
+    if (hash === '#services') {
+      target = navLinks.find(link => link.getAttribute('href').endsWith('#services'));
+    } else if (hash === '#profile') {
+      target = navLinks.find(link => link.getAttribute('href').endsWith('#profile'));
+    } else if (hash === '#contact') {
+      target = navLinks.find(link => link.getAttribute('href').endsWith('#contact'));
+    } else {
+      target = navLinks.find(link => !link.getAttribute('href').includes('#'));
+    }
+
+    if (target) target.classList.add('active');
+  }
+
+  window.addEventListener('hashchange', updateActiveMenu);
+  document.addEventListener('DOMContentLoaded', updateActiveMenu);
+  updateActiveMenu();
+})();
+</script>
+
 </body></html>

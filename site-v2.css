@@ -458,3 +458,58 @@ a{color:inherit}.container{width:min(1180px,calc(100% - 42px));margin:auto}.gold
     min-width:0!important;
   }
 }
+
+
+/* V15 FINAL MENU FIX */
+.mobile-lang-pill{
+  display:none!important;
+}
+
+.navlinks a.active{
+  color:var(--gold2)!important;
+}
+
+.navlinks a.active:not(.lang-pill){
+  position:relative;
+}
+
+.navlinks a.active:not(.lang-pill)::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-10px;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,var(--gold2),transparent);
+}
+
+/* Keep the actual navigation available instead of showing a second language button */
+@media(max-width:1120px){
+  .navlinks{
+    display:flex!important;
+    overflow-x:auto;
+    max-width:72vw;
+    scrollbar-width:none;
+    justify-content:flex-start;
+  }
+  .navlinks::-webkit-scrollbar{
+    display:none;
+  }
+}
+@media(max-width:760px){
+  .brand-title,.brand-sub{
+    display:none!important;
+  }
+  .brand img{
+    width:88px!important;
+    height:46px!important;
+  }
+  .navlinks{
+    max-width:calc(100vw - 125px);
+    gap:15px!important;
+  }
+  .navlinks a{
+    font-size:.82rem!important;
+  }
+}
